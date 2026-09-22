@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#090909" />
+    <title>小票叠影</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="is-opening">
+    <main class="page-shell">
+      <header class="masthead">
+        <div>
+          <p class="overline">RECEIPT STUDY / 01—13</p>
+          <h1>小票叠影</h1>
+        </div>
+        <button class="reset-button" id="resetButton" type="button" onclick="window.location.reload()">重置</button>
+      </header>
+
+      <section class="stage" aria-label="手机小票预览">
+        <div class="phone">
+          <div class="phone-speaker"></div>
+          <div class="phone-screen" id="screen">
+            <div class="ambient-scene" aria-hidden="true">
+              <span class="ambient-ticket ambient-ticket--left-top"><i>三维码</i><b>营养数据</b></span>
+              <span class="ambient-ticket ambient-ticket--right-top"><i>数据统计</i><b>94 张小票</b></span>
+              <span class="ambient-ticket ambient-ticket--left-bottom"><i>消费观察</i><b>PRICE × HEALTH</b></span>
+              <span class="ambient-ticket ambient-ticket--right-bottom"><i>过程记录</i><b>841 色块</b></span>
+              <span class="ambient-ticket ambient-ticket--top"><i>RECEIPT</i><b>每日消费</b></span>
+              <span class="ambient-ticket ambient-ticket--bottom"><i>营养编码</i><b>RED / BLUE / YELLOW</b></span>
+            </div>
+            <div class="stack" id="stack" aria-live="polite"></div>
+            <div class="empty-state" id="emptyState" hidden>
+              <span>13 / 13</span>
+              <strong>全部看完</strong>
+              <button type="button" id="emptyReset" onclick="window.location.reload()">重新开始</button>
+            </div>
+            <div class="hint" id="hint">左右拖动翻页 · 上下拖动阅读 · 双指缩放</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-note"><span id="statusText">第 1 张 / 共 13 张</span><span>触控与鼠标均可</span></footer>
+    </main>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
